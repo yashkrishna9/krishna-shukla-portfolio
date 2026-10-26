@@ -5,7 +5,7 @@
  */
 export const site = {
   // PLACEHOLDER: replace with your full name
-  name: "Your Name",
+  name: "Krishna Shukla",
   title: "The Quantitative Economist",
   tagline: "Exploring Economics, Mathematics, Data & Markets.",
   description:
@@ -14,10 +14,10 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
 
   links: {
-    github: "", // e.g. "https://github.com/your-username"
+    github: "", // e.g. "https://github.com/yashkrishna9"
     linkedin: "", // e.g. "https://www.linkedin.com/in/your-id"
     youtube: "", // e.g. "https://www.youtube.com/@your-channel"
-    email: "", // e.g. "you@example.com"
+    email: "", // e.g. "archimedessolve@gmail.com"
     cv: "", // Put your CV at public/cv/cv.pdf, then set this to "/cv/cv.pdf"
   },
 
