@@ -1,0 +1,187 @@
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource-variable/geist/wght.css";
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens. Dark is the default; light overrides below.
+   Change colours here and the whole site follows.
+------------------------------------------------------------------- */
+:root {
+  --bg: #050914;
+  --bg-2: #0a1226;
+  --surface: rgba(14, 26, 58, 0.55);
+  --surface-solid: #0d1833;
+  --line: rgba(130, 166, 255, 0.16);
+  --line-strong: rgba(130, 166, 255, 0.3);
+  --text: #e8eefb;
+  --muted: #94a3c4;
+  --accent: #4a82ff;
+  --accent-ink: #ffffff;
+  --cyan: #62d6e8;
+  --warn: #f2b84b;
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+  --grid-line: rgba(120, 160, 255, 0.07);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f3f6fc;
+  --bg-2: #e8eef9;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-solid: #ffffff;
+  --line: rgba(20, 50, 120, 0.14);
+  --line-strong: rgba(20, 50, 120, 0.3);
+  --text: #0b1530;
+  --muted: #4a5878;
+  --accent: #1f55d8;
+  --accent-ink: #ffffff;
+  --cyan: #0a7f93;
+  --warn: #9a6200;
+  --shadow: 0 24px 50px -28px rgba(15, 35, 90, 0.35);
+  --grid-line: rgba(20, 50, 120, 0.07);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-solid: var(--surface-solid);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-cyan: var(--cyan);
+  --color-warn: var(--warn);
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1, "cv11" 1;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Fine mathematical grid used behind pages */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+}
+
+.glass {
+  min-width: 0; /* lets wide equations scroll inside a panel instead of stretching the page */
+  background: var(--surface);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: var(--shadow);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+}
+
+.prose-note {
+  max-width: 68ch;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--text) 92%, transparent);
+}
+.prose-note h1,
+.prose-note h2,
+.prose-note h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 2.2rem 0 0.8rem;
+  color: var(--text);
+}
+.prose-note h1 { font-size: 2.2rem; }
+.prose-note h2 { font-size: 1.7rem; }
+.prose-note h3 { font-size: 1.3rem; }
+.prose-note p { margin: 0.9rem 0; }
+.prose-note ul { list-style: disc; padding-left: 1.4rem; margin: 0.9rem 0; }
+.prose-note ol { list-style: decimal; padding-left: 1.4rem; margin: 0.9rem 0; }
+.prose-note li { margin: 0.3rem 0; }
+.prose-note a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+.prose-note blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 1.2rem 0;
+}
+.prose-note code {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.prose-note pre {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+.prose-note pre code { border: 0; padding: 0; background: transparent; }
+.prose-note table { border-collapse: collapse; margin: 1.2rem 0; width: 100%; font-size: 0.95rem; }
+.prose-note th, .prose-note td { border: 1px solid var(--line); padding: 0.5rem 0.7rem; text-align: left; }
+.prose-note th { background: var(--bg-2); }
+.prose-note .katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.4rem 0; }
+
+/* Respect reduced-motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes skeleton {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-2) 0, var(--line) 50%, var(--bg-2) 100%);
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  animation: skeleton 1.4s infinite;
+}
