@@ -29,6 +29,22 @@ export type VideoEntry = {
 
 export const videos: VideoEntry[] = [
   {
+  id: "cpp-01-hello-world",
+  title: "C++ Lecture 1: Hello World",
+  url: "https://www.youtube.com/watch?v=VIDEO_ID_1",
+  category: "cpp",
+  playlist: "C++ Course",
+  description: "Lecture 1 of my C++ series.",
+},
+{
+  id: "cpp-02-variables",
+  title: "C++ Lecture 2: Variables",
+  url: "https://www.youtube.com/watch?v=VIDEO_ID_2",
+  category: "cpp",
+  playlist: "C++ Course",
+  description: "Lecture 2 of my C++ series.",
+},
+  {
     id: "placeholder-consumer-choice",
     title: "Placeholder: Consumer choice and the budget line",
     url: "",
