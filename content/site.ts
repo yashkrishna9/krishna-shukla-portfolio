@@ -16,7 +16,7 @@ export const site = {
   links: {
     github: "", // e.g. "https://github.com/yashkrishna9"
     linkedin: "", // e.g. "https://www.linkedin.com/in/your-id"
-    youtube: "", // e.g. "https://www.youtube.com/@your-channel"
+    youtube: "https://www.youtube.com/@QuantEconomist", // e.g. "https://www.youtube.com/@your-channel"
     email: "", // e.g. "archimedessolve@gmail.com"
     cv: "", // Put your CV at public/cv/cv.pdf, then set this to "/cv/cv.pdf"
   },
