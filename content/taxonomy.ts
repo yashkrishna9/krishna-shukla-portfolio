@@ -45,6 +45,7 @@ export const videoCategories = [
   { id: "quant-research", label: "Quant research" },
   { id: "python", label: "Python" },
   { id: "finance", label: "Finance" },
+  { id: "cpp", label: "C++" },
 ] as const;
 
 export type ProjectCategoryId = (typeof projectCategories)[number]["id"];
