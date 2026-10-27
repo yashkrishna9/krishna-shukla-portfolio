@@ -31,7 +31,7 @@ export const videos: VideoEntry[] = [
   {
   id: "cpp-01-hello-world",
   title: "C++ Lecture 1: Hello World",
-  url: "https://youtu.be/KJmYMLRnj9Q?si=FsStS3BW32Be628a",
+  url: "https://www.youtube.com/watch?v=KJmYMLRnj9Q",
   category: "cpp",
   playlist: "C++ Course",
   description: "Lecture 1 of my C++ series.",
